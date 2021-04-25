@@ -4,7 +4,7 @@ import os
 # 获得视频打标签的参数
 def get_args():
     parser = argparse.ArgumentParser('HMDB_Video_label_Process')
-    parser.add_argument('--data_path',default='E:\\HMDB',type=str)
+    parser.add_argument('--data_path',default='E:\\attention-network-master\HMDB',type=str)
 
     return parser.parse_args()
 
@@ -48,7 +48,7 @@ def num_sum(path_dir):
                 sum += 1
         return str(sum)
 
-def get_train_test_val_text(data_path,train_txt = 'hmdb_split1_train.txt',test_txt = 'hmdb_split1_test.txt',val_txt = 'hmdb_split1_val.txt'):
+def get_train_test_val_text(data_path,train_txt = 'hmdb_split1_train.txt',test_txt = 'hmdb_split1_test.txt'):
     # 视频文件夹->类文件夹
     filedir2file_dic =count_filedir2file_dic(data_path)
     # 文件夹->label编号
@@ -57,35 +57,30 @@ def get_train_test_val_text(data_path,train_txt = 'hmdb_split1_train.txt',test_t
     sum_number_dic = count_sum_number_dic(data_path,label_dic)
 
     for class_dir in os.listdir(data_path):
+        class_dir_path = os.listdir(os.path.join(data_path,class_dir))
+        class_dir_count_sum = len(class_dir_path)
         index = 0
-        for file in os.listdir(os.path.join(data_path,class_dir)):
+        for file in class_dir_path:
+
             file_path = os.path.join(data_path,class_dir,file)
             if os.path.isdir(file_path):
-                if(index>=0 and index<70):
-                    real_file_path = file_path.replace(data_path,'HMDB')
-                    real_file_sum = sum_number_dic[file]
-                    real_file_label = label_dic[filedir2file_dic[file]]
-                    path_string = real_file_path + ' ' + str(real_file_sum) + ' ' + str(real_file_label)
+
+                real_file_path = file_path.replace(data_path, 'HMDB')
+                real_file_sum = sum_number_dic[file]
+                real_file_label = label_dic[filedir2file_dic[file]]
+                path_string = real_file_path + ' ' + str(real_file_sum) + ' ' + str(real_file_label)
+
+                if(index<class_dir_count_sum*0.7):
                     with open(train_txt, 'a', encoding='utf-8') as file:
                         file.writelines(path_string.replace('\\','/'))
                         file.writelines('\n')
 
-                elif(index>=70 and index<100):
-                    real_file_path = file_path.replace(data_path,'HMDB')
-                    real_file_sum = sum_number_dic[file]
-                    real_file_label = label_dic[filedir2file_dic[file]]
-                    path_string = real_file_path + ' ' + str(real_file_sum) + ' ' + str(real_file_label)
+                else:
                     with open(test_txt, 'a', encoding='utf-8') as file:
                         file.writelines(path_string.replace('\\','/'))
                         file.writelines('\n')
-                else:
-                    real_file_path = file_path.replace(data_path,'HMDB')
-                    real_file_sum = sum_number_dic[file]
-                    real_file_label = label_dic[filedir2file_dic[file]]
-                    path_string = real_file_path + ' ' + str(real_file_sum) + ' ' + str(real_file_label)
-                    with open(val_txt, 'a', encoding='utf-8') as file:
-                        file.writelines(path_string.replace('\\','/'))
-                        file.writelines('\n')
+                        print(index)
+
                 index = index + 1
 
 if __name__ == '__main__':
