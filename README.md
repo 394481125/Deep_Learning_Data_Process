@@ -23,3 +23,9 @@
   - [数据集论文排行榜](https://paperswithcode.com/dataset/kinetics)
   - [数据集官方下载地址](https://deepmind.com/research/open-source/kinetics)
   - 暂无
+
+参考：
+
+- [x] [常用公开数据集（英文）](https://homepages.inf.ed.ac.uk/rbf/CVonline/Imagedbase.htm)
+
+- [x] [常用公开数据集（中文）](https://blog.csdn.net/weixin_41036461/article/details/80667690?utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-3.control&dist_request_id=1332048.364.16193541378181833&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-3.control)
