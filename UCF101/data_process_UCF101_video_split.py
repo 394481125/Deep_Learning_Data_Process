@@ -4,8 +4,8 @@ import subprocess
 
 # 获得视频分帧的参数
 def get_args():
-    parser = argparse.ArgumentParser('HMDB_Video_split_Process')
-    parser.add_argument('--data_path',default='E:\\HMDB',type=str)
+    parser = argparse.ArgumentParser('UCF101_Video_split_Process')
+    parser.add_argument('--data_path',default='E:\\attention-network-master\\UCF-101',type=str)
     parser.add_argument('--isdelate',default=False,type=bool)
 
     return parser.parse_args()
