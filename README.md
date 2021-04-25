@@ -16,8 +16,8 @@
   - [数据集论文排行榜](https://paperswithcode.com/sota/action-recognition-in-videos-on-hmdb-51)
   - [数据集官方下载地址](https://serre-lab.clps.brown.edu/resource/hmdb-a-large-human-motion-database/)
   - 数据集处理
-    - [视频分帧](HMDB51\data_process_HMDB_video_split.py) 
-    - [训练集测试集划分](HMDB51\data_process_HMDB_label_write.py) 
+    - [视频分帧](.\HMDB51\data_process_HMDB_video_split.py) 
+    - [训练集测试集划分](.\HMDB51\data_process_HMDB_label_write.py) 
 
 - [x] Kinetics
   - [数据集论文排行榜](https://paperswithcode.com/dataset/kinetics)
