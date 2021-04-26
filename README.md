@@ -7,7 +7,7 @@
 
 先弄了目前使用的几个，[更多数据集相关请查看](https://paperswithcode.com/task/action-recognition-in-videos)
 
-通用的视频帧数据读取操作
+使用了通用的视频帧数据读取操作：[Dataset处理类](https://github.com/394481125/Deep_Learning_Data_Process/blob/main/Dataset.py)
 
 - [x] UCF101
   - [数据集论文排行榜](https://paperswithcode.com/sota/action-recognition-in-videos-on-ucf101)
