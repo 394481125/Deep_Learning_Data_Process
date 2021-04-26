@@ -7,6 +7,8 @@
 
 先弄了目前使用的几个，[更多数据集相关请查看](https://paperswithcode.com/task/action-recognition-in-videos)
 
+通用的视频帧数据读取操作
+
 - [x] UCF101
   - [数据集论文排行榜](https://paperswithcode.com/sota/action-recognition-in-videos-on-ucf101)
   - [数据集官方下载地址](https://www.crcv.ucf.edu/data/UCF101.php)
